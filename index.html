@@ -10,6 +10,9 @@
     <section id="navi-continer"> 
         <div class="bar">
         <img src="image/logo.png" alt="xyz" class="logo"/>
+        <button class="nav-toggle" aria-label="toggle navigation">
+            <span class="hamburger"></span>
+        </button>
             <ul class="navi">
                 <li><a href="#our-story">our story</a></li>
                 <li><a href="#products">products</a></li>
@@ -76,7 +79,7 @@
                     </div>
                     <div>
                     <img src="image/client5.jpg" alt="xyz" class="clients">
-                    <p class="john">ayan khan /<span class="zoheb"> manager</spna></p>
+                    <p class="john">ayan khan /<span class="zoheb"> manager</span></p>
                     <p>In some cases, you may need more than one sentence to express a paragraph’s controlling idea.</p>
                     </div>
                     <div>
@@ -145,18 +148,20 @@
                 <p class="reserved">2014 ARK Studio . ALL Right Reseved </p>
                 </section>
 
+<script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navi = document.querySelector('.navi');
+    navToggle.addEventListener('click', () => {
+        navi.classList.toggle('active');
+        navToggle.classList.toggle('active');
+    });
+    navi.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navi.classList.remove('active');
+            navToggle.classList.remove('active');
+        });
+    });
+</script>
 
-
-                    
-                    
-
-                
-             
-            
-            
-
-        
-        
-    
 </body>
 </html>
